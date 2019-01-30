@@ -11,12 +11,15 @@
 |
 */
 
-Route::get('/','StaticPagesController@home');
-Route::get('about','StaticPagesController@about');
-Route::get('help','StaticPagesController@help');
+Route::get('/','StaticPagesController@home')->name('home');
+Route::get('about','StaticPagesController@about')->name('about');
+Route::get('help','StaticPagesController@help')->name('help');
 
 Route::get('test',function (){
-    echo getenv('APP_KEY');
+//    echo getenv('APP_KEY');
+    print_r(route("about"));
+    print_r(route("/"));
+
 });
 
 
